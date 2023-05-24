@@ -33,6 +33,12 @@ function rest_auth_user_partial_update(payload) {
 function api_docs_schema_retrieve(payload) {
   return vtestAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_meetupss_list(payload) {
+  return vtestAPI.get(`/api/v1/meetupss/`)
+}
+function api_v1_meetupss_create(payload) {
+  return vtestAPI.post(`/api/v1/meetupss/`, payload.data)
+}
 function rest_auth_login_create(payload) {
   return vtestAPI.post(`/rest-auth/login/`, payload.data)
 }
@@ -72,6 +78,18 @@ function rest_auth_logout_retrieve(payload) {
 function rest_auth_logout_create(payload) {
   return vtestAPI.post(`/rest-auth/logout/`)
 }
+function api_v1_meetupss_retrieve(payload) {
+  return vtestAPI.get(`/api/v1/meetupss/${payload.id}/`)
+}
+function api_v1_meetupss_update(payload) {
+  return vtestAPI.put(`/api/v1/meetupss/${payload.id}/`, payload.data)
+}
+function api_v1_meetupss_partial_update(payload) {
+  return vtestAPI.patch(`/api/v1/meetupss/${payload.id}/`, payload.data)
+}
+function api_v1_meetupss_destroy(payload) {
+  return vtestAPI.delete(`/api/v1/meetupss/${payload.id}/`)
+}
 function api_v1_main_menu_retrieve(payload) {
   return vtestAPI.get(`/api/v1/main_menu/${payload.id}/`)
 }
@@ -110,6 +128,8 @@ export const apiService = {
   rest_auth_user_update,
   rest_auth_user_partial_update,
   api_docs_schema_retrieve,
+  api_v1_meetupss_list,
+  api_v1_meetupss_create,
   rest_auth_login_create,
   api_v1_home_retrieve,
   api_v1_home_update,
@@ -123,6 +143,10 @@ export const apiService = {
   api_v1_user_destroy,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
+  api_v1_meetupss_retrieve,
+  api_v1_meetupss_update,
+  api_v1_meetupss_partial_update,
+  api_v1_meetupss_destroy,
   api_v1_main_menu_retrieve,
   api_v1_main_menu_update,
   api_v1_main_menu_partial_update,
