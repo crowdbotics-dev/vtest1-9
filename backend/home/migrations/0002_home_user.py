@@ -13,17 +13,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Home',
+            name='Vinay_home',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('value1', models.CharField(max_length=256)),
+                ('value1', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
             name='User',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.EmailField(max_length=254)),
+                ('email', models.EmailField(max_length=200)),
                 ('password', models.CharField(max_length=200)),
             ],
         ),
